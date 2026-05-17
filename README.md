@@ -90,7 +90,7 @@ kunitz-hmm/
 
     ● Used scripts/getchain.py to extract/isolate from each PDB file the structure of the desired chain containing the Kunitz domain
 
-'''bash
+#!/bin/bash
 while IFS=':' read -r pdb chain; do
     python getchain.py "$pdb.pdb" "$chain" > "${pdb}_${chain}.pdb" done < pdb_id.rep
 
