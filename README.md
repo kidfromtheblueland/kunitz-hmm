@@ -88,9 +88,11 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
 
 - Used scripts/getchain.py to extract/isolate from each PDB file the structure of the desired chain containing the Kunitz domain
 
-        while IFS=':' read -r pdb chain; do
-        python getchain.py "$pdb.pdb" "$chain" > "${pdb}_${chain}.pdb" done < pdb_id.rep
+'''
+while IFS=':' read -r pdb chain; do
+python getchain.py "$pdb.pdb" "$chain" > "${pdb}_${chain}.pdb" done < pdb_id.rep
     
-        #to clean the list of any hidden characters
-        tr -d '\r' < pdp_id.rep > clean_pdp_id.rep'''
+#to clean the list of any hidden characters
+tr -d '\r' < pdp_id.rep > clean_pdp_id.rep
+'''
 
