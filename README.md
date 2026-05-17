@@ -59,40 +59,37 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
 
 # Project Workflow
 ## 1. Data Acquisition and Preprocessing
+- Data was retrieved from RCSB PDB using a custom query:
+    - Pfam ID: PF00014
+    - Resolution ≤ 3.5 Å
+    - Sequence length 40–80 residues
 
-● Data was retrieved from RCSB PDB using a custom query:
-
- ○ Pfam ID: PF00014
- ○ Resolution ≤ 3.5 Å
- ○ Sequence length 40–80 residues
-
-● A custom report was downloaded from the RCSB website, including the following fields:
-
- ○ Entry ID
- ○ Polymer Entity ID
- ○ Sequence
- ○ Annotation Identifier
- ○ Chain ID
+- A custom report was downloaded from the RCSB website, including the following fields:
+    - Entry ID
+    - Polymer Entity ID
+    - Sequence
+    - Annotation Identifier
+    - Chain ID
     
-● The protein sequences were extracted from the CSV report using scripts/extract_sequence.sh
+- The protein sequences were extracted from the CSV report using scripts/extract_sequence.sh
 
 ## 2. Sequence Clustering
 
-● Used MMseqs2 platform (https://toolkit.tuebingen.mpg.de/tools/mmseqs2) to cluster the protein chains
-● Identity threshold: 95%, coverage: 95%
-● Output: clustered sequences for further analysis
+- Used MMseqs2 platform (https://toolkit.tuebingen.mpg.de/tools/mmseqs2) to cluster the protein chains
+    - Identity threshold: 95%, coverage: 95%
+    - Output: clustered sequences for further analysis
 
 ## 3. ID Extraction for Structural Search
 
-● Used scripts/extract_pid.sh to format IDs for PDBeFold
+- Used scripts/extract_pid.sh to format IDs for PDBeFold
 
 ## 4. Structural Filtering
 
-● Used scripts/getchain.py to extract/isolate from each PDB file the structure of the desired chain containing the Kunitz domain
+- Used scripts/getchain.py to extract/isolate from each PDB file the structure of the desired chain containing the Kunitz domain
 
-    while IFS=':' read -r pdb chain; do
-    python getchain.py "$pdb.pdb" "$chain" > "${pdb}_${chain}.pdb" done < pdb_id.rep
-
-    #to clean the list of any hidden characters
-    tr -d '\r' < pdp_id.rep > clean_pdp_id.rep'''
+        while IFS=':' read -r pdb chain; do
+        python getchain.py "$pdb.pdb" "$chain" > "${pdb}_${chain}.pdb" done < pdb_id.rep
+    
+        #to clean the list of any hidden characters
+        tr -d '\r' < pdp_id.rep > clean_pdp_id.rep'''
 
