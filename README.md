@@ -59,6 +59,7 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
 
 # Project Workflow
 ## 1. Data Acquisition and Preprocessing
+
 - Data was retrieved from RCSB PDB using a custom query:
     - Pfam ID: PF00014
     - Resolution ≤ 3.5 Å
@@ -93,5 +94,43 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
             
         #to clean the list of any hidden characters
         tr -d '\r' < pdp_id.rep > clean_pdp_id.rep
+  
+## 5. Structural Alignment
 
+- Performed all-vs-all alignment on the PDBeFold platform
+- Saved RMSD data as a matrix into a .csv file to create heatmaps
+- Saved the alignment data as a FASTA file
+- Visualized the alignment using AliView
+- 5 outliers identified and excluded
+- Performed the alignment once again with the refined data
+- Saved the new RMSD and FASTA after the refinement
+- Used UCSF Chimera to visualise the structures' superimposition
 
+## 6. HMM Construction
+
+        hmmbuild kunitz.hmm kunitz.ali
+
+## 6. HMM Evaluation
+
+This section details the analytical frameworks used to test the diagnostic power of our generated profile HMM, ensuring robust classification performance on unknown datasets.
+
+###Evaluation Methodology:
+
+- Data Splitting: Utilizing a 2-fold split strategy to extract maximum value from the dataset.
+- Leakage Control: Isolating and removing training sequences from the evaluation pool to ensure an unbiased test.
+- Statistical Metrics: Scoring the model based on MCC, Sensitivity (Sn/Recall), and Precision.
+- Threshold Optimization: Testing an array of $E$-value cutoffs to identify peak classifier performance.
+
+2. Validation Datasets
+
+- <a name="positive_kunitz.fasta"></a>
+- <a name="negative_kunitz.fasta"></a>
+- <a name="negatives.nomatch"></a>
+
+3. Analysis Pipeline
+
+- Dataset Curation: Aggregate data pools and strip out any overlapping training sequences to prevent leakage.
+- Fold Generation: Randomly divide the filtered data into balanced positive and negative subsets.
+- Model Execution: Query the validation folds against the trained HMM using local hmmsearch calls.
+- Performance Assessment: Parse the output logs to calculate core predictive metrics.
+- Analysis Export: Generate final performance summaries and evaluate optimal score thresholds.
