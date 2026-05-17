@@ -77,6 +77,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb_checkpoints
 
 # IPython
 profile_default/
@@ -156,6 +157,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+conda-env/
 
 # Spyder project settings
 .spyderproject
@@ -216,3 +218,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Data and Structures
+*.pdb
+*.ent
+*.hmm
+*.sto
+structures/raw/
+structures/before_filtering/
+
+# Large output files
+results/*.csv
+figures/*.png
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal
+*.bak
+TODO.md
