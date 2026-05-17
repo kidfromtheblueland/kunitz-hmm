@@ -29,8 +29,8 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
     │       └── set2.txt
     │
     ├── structures/
-    │   ├── raw/                    # Original downloaded PDBs
-    │   └── final_chains/           # Cleaned chains (e.g. 3ZCF_A.pdb)
+    │   ├── raw/                    
+    │   └── final_chains/          
     │
     ├── alignments/
     │   ├── msa.seq
