@@ -76,6 +76,7 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
 ## 2. Sequence Clustering
 
 - Used MMseqs2 platform (https://toolkit.tuebingen.mpg.de/tools/mmseqs2) to cluster the protein chains
+
     - Identity threshold: 95%, coverage: 95%
     - Output: clustered sequences for further analysis
 
