@@ -176,4 +176,8 @@ MCC: 0.9971
 - Develop a web tool or Python package for easy use of the model by the community.
 - Investigate the use of deep learning-based methods (e.g., Transformer-based protein language models) for comparison with the classical HMM approach.
 
+# Supervisor
+Professor Emidio Capriotti
 
+# License
+This project is licensed under the MIT License (LICENSE).
