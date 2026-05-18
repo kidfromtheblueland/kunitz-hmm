@@ -129,8 +129,8 @@ This section details the analytical frameworks used to test the diagnostic power
 
 3. Analysis Pipeline
 
- 1- Dataset Curation: Aggregate data pools and strip out any overlapping training sequences to prevent leakage.
- 2- Fold Generation: Randomly divide the filtered data into balanced positive and negative subsets.
+ * 1- Dataset Curation: Aggregate data pools and strip out any overlapping training sequences to prevent leakage.
+ * 2- Fold Generation: Randomly divide the filtered data into balanced positive and negative subsets.
  3- Model Execution: Query the validation folds against the trained HMM using local hmmsearch calls.
  4- Performance Assessment: Parse the output logs to calculate core predictive metrics.
  5- Analysis Export: Generate final performance summaries and evaluate optimal score thresholds.
