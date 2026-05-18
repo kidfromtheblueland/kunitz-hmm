@@ -123,9 +123,9 @@ This section details the analytical frameworks used to test the diagnostic power
 
 ### Validation Datasets
 
-- <positive_kunitz.fasta>
-- <a name="negative_kunitz.fasta"></a>
-- <a name="negatives.nomatch"></a>
+- 'positive_kunitz.fasta'
+- 'negative_kunitz.fasta'
+- 'negatives.nomatch'
 
 ### Analysis Pipeline
 
