@@ -1,0 +1,13 @@
+# Core data analysis and plotting libraries
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Bioinformatics
+biopython>=1.83
+
+# Jupyter ecosystem
+jupyter>=1.0.0
+notebook>=7.0.0
+ipykernel>=6.0.0
