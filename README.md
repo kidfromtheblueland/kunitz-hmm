@@ -169,3 +169,12 @@ Recall (Sensitivity): 0.9943
 Specificity: 1.0000
 F1-score: 0.9971
 MCC: 0.9971
+
+# Future Improvements
+- Expand the training set by incorporating the two false negative sequences (tick-derived Kunitz inhibitors) to improve sensitivity toward divergent invertebrate variants.
+- Explore ensemble approaches by combining multiple HMMs or integrating structural information from AlphaFold-predicted models.
+- Test the model on larger, uncurated databases (e.g., UniProt TrEMBL) to evaluate scalability and real-world performance.
+- Develop a web tool or Python package for easy use of the model by the community.
+- Investigate the use of deep learning-based methods (e.g., Transformer-based protein language models) for comparison with the classical HMM approach.
+
+
