@@ -36,5 +36,5 @@ comm -23 master_list.ids match_list.ids > missing_ids.txt
 awk '{print $1, 100, 0}' missing_ids.txt > negatives.nomatch
 
 #merge the match ids (negative sequences that received an e-value hit) and the no-match ids (rescued sequences that the model correctly ignored) into a single file for the confusion matrix
-cat negative_kunitz.match negatives.nomatch > negative_tot_match.txt
+cat negative_kunitz.match negatives.nomatch > total_neg.txt
 
