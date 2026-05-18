@@ -18,15 +18,14 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
     ├── .gitignore
     │
     ├── data/
-    │   ├── benchmark/
-    │   │   ├── positive_kunitz.fasta
-    │   │   └── negative_kunitz.fasta
-    │   └── results/
-    │       ├── pos_results.table
-    │       ├── neg_results.table
-    │       ├── all_preds.txt
-    │       ├── set1.txt
-    │       └── set2.txt
+    │   ├── positive_kunitz.fasta
+    │   ├── negative_kunitz.fasta
+    │   ├── total_neg.txt
+    │   ├── pos_results.table
+    │   ├── neg_results.table
+    │   ├── all_preds.txt
+    │   ├── set1.txt
+    │   └── set2.txt
     │
     ├── structures/
     │   ├── raw/                    
@@ -42,18 +41,18 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
     ├── scripts/
     │   ├── getchain.py
     │   ├── performance.py
-    │   ├── download_pdbs.sh
-    │   ├── extract_chains.sh
-    │   ├── build_hmm.sh
-    │   ├── run_hmmsearch.sh
-    │   └── cross_validation_prep.sh     
+    │   ├── extract_sequence.sh
+    │   ├── extract_pid.sh
+    │   └── hmm_evaluation.sh     
     │
     ├── notebooks/
     │   └── Kunitz_HMM_Visualization.ipynb
     │       
     └── figures/
         ├── mcc_vs_threshold.png
-        ├── rmsd_heatmaps_comparison.png
+        ├── rmsd_heatmap_A.png
+        ├── rmsd_heatmap_B.png
+        ├── chimera_superimposition.png
         ├── sequence_identity_heatmap.png
         └── sequence_logo.png
 
