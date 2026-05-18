@@ -72,7 +72,7 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
     - Annotation Identifier
     - Chain ID
     
-- The protein sequences were extracted from the CSV report using scripts/extract_sequence.sh
+- The protein sequences were extracted from the CSV report using `scripts/extract_sequence.sh`
 
 ## 2. Sequence Clustering
 
@@ -83,18 +83,18 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
 
 ## 3. ID Extraction for Structural Search
 
-- Used scripts/extract_pid.sh to format IDs for PDBeFold
+- Used `scripts/extract_pid.sh` to format IDs for PDBeFold
 
 ## 4. Structural Filtering
 
-- Used scripts/getchain.py to extract/isolate from each PDB file the structure of the desired chain containing the Kunitz domain
-```
-while IFS=':' read -r pdb chain; do
-python getchain.py "$pdb.pdb" "$chain" > "${pdb}_${chain}.pdb" done < pdb_id.rep
-            
-#to clean the list of any hidden characters
-tr -d '\r' < pdp_id.rep > clean_pdp_id.rep
-```
+- Used `scripts/getchain.py` to isolate and extract from each PDB file the structure of the desired chain containing the Kunitz domain
+
+        while IFS=':' read -r pdb chain; do
+        python getchain.py "$pdb.pdb" "$chain" > "${pdb}_${chain}.pdb" done < pdb_id.rep
+                    
+        #to clean the list of any hidden characters
+        tr -d '\r' < pdp_id.rep > clean_pdp_id.rep
+
   
 ## 5. Structural Alignment
 
@@ -102,7 +102,7 @@ tr -d '\r' < pdp_id.rep > clean_pdp_id.rep
 - Saved RMSD data as a matrix into a .csv file to create heatmaps
 - Saved the alignment data as a FASTA file
 - Visualized the alignment using AliView
-- 5 outliers identified and excluded
+- 6 outliers identified and excluded
 - Performed the alignment once again with the refined data
 - Saved the new RMSD and FASTA after the refinement
 - Used UCSF Chimera to visualise the structures' superimposition
@@ -120,7 +120,7 @@ This section details the analytical frameworks used to test the diagnostic power
 - Data Splitting: Utilizing a 2-fold split strategy to extract maximum value from the dataset.
 - Leakage Control: Isolating and removing training sequences from the evaluation pool to ensure an unbiased test.
 - Statistical Metrics: Scoring the model based on MCC, Sensitivity (Sn/Recall), and Precision.
-- Threshold Optimization: Testing an array of $E$-value cutoffs to identify peak classifier performance.
+- Threshold Optimization: Testing an array of E-value cutoffs to identify peak classifier performance.
 
 ### Validation Datasets
 
@@ -135,3 +135,38 @@ This section details the analytical frameworks used to test the diagnostic power
  3. Model Execution: Query the validation folds against the trained HMM using local hmmsearch calls.
  4. Performance Assessment: Parse the output logs to calculate core predictive metrics.
  5. Analysis Export: Generate final performance summaries and evaluate optimal score thresholds.
+
+# Environment Setup
+
+To ensure reproducibility and manage software versions, a dedicated Conda environment can be used. This creates an isolated space where specific bioinformatics tools and Python libraries are installed without conflicting with the system-wide settings.
+
+
+    #create the environment
+    conda create -n kunitz_project python=3.x
+    #activate the environment
+    conda activate kunitz_project
+    #install bioinformatics tools
+    conda install -c bioconda hmmer mmseqs2 blast
+
+## Key  Dependencies and Utilities
+
+- Python 3.13 with standard libraries (NumPy, Pandas, Matplotlib, Biopython, Seaborn)
+- Bioinformatics tools: HMMER suite, MMseqs2, NCBI BLAST, PBDeFold, Aliview
+- Standard Unix Utilities: wget, grep, awk, comm, sort
+
+# Performance Assessment
+
+## False Negative Results
+
+| UniProt ID | Length | Domains | Domain Position | Comments
+| --- | --- | --- | --- | --- |
+| A0A1Q1NL17 | 101 | 1 | 32-88 | Short sequence; Kunitz-type anticoagulant protein HA11 |
+| Q8WPG5 | 134 | 2 | 17-69, 83-129 | Tandem domains; Thrombin inhibitor savignin |
+
+The optimal threshold was identified at 1e-5, yielding the following performance:
+Accuracy: 1.0000
+Precision: 1.0000
+Recall (Sensitivity): 0.9943
+Specificity: 1.0000
+F1-score: 0.9971
+MCC: 0.9971
