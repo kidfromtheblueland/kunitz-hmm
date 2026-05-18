@@ -146,7 +146,6 @@ To ensure reproducibility and manage software versions, a dedicated Conda enviro
     conda activate kunitz_project
     #install bioinformatics tools
     conda install -c bioconda hmmer mmseqs2 blast
-
 ## Key  Dependencies and Utilities
 
 - Python 3.13 with standard libraries (NumPy, Pandas, Matplotlib, Biopython, Seaborn)
