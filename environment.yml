@@ -1,0 +1,34 @@
+name: kunitz-hmm
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.13
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - biopython
+  - jupyter
+  - notebook
+  - ipykernel
+  - tqdm
+
+  # Bioinformatics tools
+  - hmmer
+  - mmseqs2
+  - biopython
+
+  # Optional useful tools
+  - pip
+  - wget
+  - awk
+
+  # For Jupyter
+  - jupyterlab
+
+pip:
+  - tqdm
