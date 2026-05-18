@@ -28,8 +28,13 @@ grep -v "^#" neg_results.table | awk '
 Sort master_list.ids
 Sort match_list.ids
 
-#compare the id lists
+#compares two sorted files and outputs only the lines unique to the first file (the sequences present in the dataset but absent from the search results)
 comm -23 master_list.ids match_list.ids > missing_ids.txt
+
+#assign an arbitrarily high E-value (the dummy value). this ensures that these sequences will always be classified as negatives
+#assign the real class label of 0, identifying them as known negatives
 awk '{print $1, 100, 0}' missing_ids.txt > negatives.nomatch
 
+#merge the match ids (negative sequences that received an e-value hit) and the no-match ids (rescued sequences that the model correctly ignored) into a single file for the confusion matrix
+cat negative_kunitz.match negatives.nomatch > negative_tot_match.txt
 
