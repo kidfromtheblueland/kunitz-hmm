@@ -114,23 +114,23 @@ Profile Hidden Markov Model for the classification of Kunitz-type protease inhib
 
 This section details the analytical frameworks used to test the diagnostic power of our generated profile HMM, ensuring robust classification performance on unknown datasets.
 
-###Evaluation Methodology:
+### Evaluation Methodology:
 
 - Data Splitting: Utilizing a 2-fold split strategy to extract maximum value from the dataset.
 - Leakage Control: Isolating and removing training sequences from the evaluation pool to ensure an unbiased test.
 - Statistical Metrics: Scoring the model based on MCC, Sensitivity (Sn/Recall), and Precision.
 - Threshold Optimization: Testing an array of $E$-value cutoffs to identify peak classifier performance.
 
-2. Validation Datasets
+### Validation Datasets
 
 - <a name="positive_kunitz.fasta"></a>
 - <a name="negative_kunitz.fasta"></a>
 - <a name="negatives.nomatch"></a>
 
-3. Analysis Pipeline
+### Analysis Pipeline
 
-1. Dataset Curation: Aggregate data pools and strip out any overlapping training sequences to prevent leakage.
-2. Fold Generation: Randomly divide the filtered data into balanced positive and negative subsets.
-3. Model Execution: Query the validation folds against the trained HMM using local hmmsearch calls.
-4. Performance Assessment: Parse the output logs to calculate core predictive metrics.
-5. Analysis Export: Generate final performance summaries and evaluate optimal score thresholds.
+ 1. Dataset Curation: Aggregate data pools and strip out any overlapping training sequences to prevent leakage.
+ 2. Fold Generation: Randomly divide the filtered data into balanced positive and negative subsets.
+ 3. Model Execution: Query the validation folds against the trained HMM using local hmmsearch calls.
+ 4. Performance Assessment: Parse the output logs to calculate core predictive metrics.
+ 5. Analysis Export: Generate final performance summaries and evaluate optimal score thresholds.
