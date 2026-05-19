@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/python-3.13+-blue)
 ![](https://img.shields.io/badge/tool-HHMER-purple)
 ![](https://img.shields.io/badge/tool-PDBeFold-pink)
-![](https://img.shields.io/badge/tool-MMseqs2-yellow)
+![](https://img.shields.io/badge/tool-MMseqs2-brightgreen)
 
 
 <img width="2816" height="1412" alt="Gemini_Generated_Image_tf4hu9tf4hu9tf4h (1)" src="https://github.com/user-attachments/assets/dc3509ec-6792-43be-8cd8-10db13c5827b" />
