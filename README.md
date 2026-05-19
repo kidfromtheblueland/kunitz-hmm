@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/university-Bologna-red)
 ![](https://img.shields.io/badge/course-Bioinformatics_Lab_1-cyan)
-![](https://img.shields.io/badge/python-3.13+-blue)
+![](https://img.shields.io/badge/python-3.13+-brightblue)
 ![](https://img.shields.io/badge/tool-HHMER-purple)
 ![](https://img.shields.io/badge/tool-PDBeFold-purple)
 ![](https://img.shields.io/badge/tool-MMseqs2-yellow)
