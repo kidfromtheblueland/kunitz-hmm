@@ -1,5 +1,13 @@
 # A Hidden Markov Model-Based Approach for the Automatic Classification and Annotation of Kunitz BPTI Domains
 
+![](https://img.shields.io/badge/university-Bologna-red)
+![](https://img.shields.io/badge/course-Bioinformatics-Lab-1-cyan)
+![](https://img.shields.io/badge/python-3.13+-blue)
+![](https://img.shields.io/badge/tool-HHMER-purple)
+![](https://img.shields.io/badge/tool-PDBeFold-purple)
+![](https://img.shields.io/badge/tool-MMseqs2-yellow)
+
+
 <img width="2816" height="1412" alt="Gemini_Generated_Image_tf4hu9tf4hu9tf4h (1)" src="https://github.com/user-attachments/assets/dc3509ec-6792-43be-8cd8-10db13c5827b" />
 
 This repository provides the complete pipeline and materials used to build, evaluate, and validate a profile HMM for detecting Kunitz-type domains in protein sequences. The project was developed as the final assessment for the Laboratory of Bioinformatics 1 course at the University of Bologna.
